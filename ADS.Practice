@@ -1,0 +1,329 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMDWyYt6Ht+kRQ498tbNw6r",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ShivangiP169/Array-Practice-Question/blob/main/ADS.Practice\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6 march"
+      ],
+      "metadata": {
+        "id": "2zv9e6Yv-SXR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def binary_serach(list,key):\n",
+        "    low = 0\n",
+        "    high = len(list) - 1\n",
+        "    while low < high:\n",
+        "        mid = (low + high)//2\n",
+        "    if key == list[mid]:\n",
+        "        return mid\n",
+        "    elif key < list[mid]:\n",
+        "        high = mid - 1\n",
+        "    else:\n",
+        "        low = mid + 1\n",
+        "    return -1\n",
+        "\n",
+        "n = int(input(\"Enter the no.of elements:\"))\n",
+        "list = []\n",
+        "for i in range(n):\n",
+        "    num = int(input(\"Enter numbers:\"))\n",
+        "    list.append(num)\n",
+        "key = int(input(\"Enter Seraching elements:\"))\n",
+        "position =  binary_serach(list,key)\n",
+        "if position == -1:\n",
+        "    print(\"Elements found\")\n",
+        "else:\n",
+        "    print(\"{} Element found at position {}\".format(key,position))"
+      ],
+      "metadata": {
+        "id": "fifpSOvE-UhE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7 March"
+      ],
+      "metadata": {
+        "id": "59lLPKkSGfBP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "bubble_sort(list):\n",
+        "1 size=len of list\n",
+        "2 for i=0 to size-1, then\n",
+        "   if list[i]>list[i+1],then\n",
+        "   set temp=list[1]\n",
+        "   set list[i]=list[i+1]\n",
+        "   set list[i+1]=temp\n",
+        "3 return list\n",
+        "\n",
+        "\n",
+        "def bubble_sort(lst):\n",
+        "    size = len(lst)\n",
+        "    for i in range(size - 1):  # Outer loop for passes\n",
+        "        for j in range(size - 1 - i):  # Inner loop for comparisons\n",
+        "            if lst[j] > lst[j + 1]:  # Swap if elements are in wrong order\n",
+        "                temp = lst[j]\n",
+        "                lst[j] = lst[j + 1]\n",
+        "                lst[j + 1] = temp\n",
+        "  n = int(input(\"Enter number of elements:\"))\n",
+        "  1st[]\n",
+        "  for i in range(n):\n",
+        "    num= int(input(\"Enter elements:\"))\n",
+        "    list.append(num)\n",
+        "\n",
+        "\n",
+        "  bubble_sort(1st)\n",
+        "  print(\"The sorted elements are:\")\n",
+        "  for i in range(n)\n",
+        "  print(1st[i], end=\"\")\n",
+        "\n",
+        "  Enter number of elements:5\n",
+        "  Enter elements :60\n",
+        "\n",
+        "\n",
+        "\n",
+        "# Example usage\n",
+        "arr = [64, 34, 25, 12, 22, 11, 90]\n",
+        "sorted_arr = bubble_sort(arr)\n",
+        "print(\"Sorted array:\", sorted_arr)"
+      ],
+      "metadata": {
+        "id": "uv7vUZb5_BRF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "Fj-1BhbwK5tL"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "find the smallest element in selector and then element is interchange with the element of first position."
+      ],
+      "metadata": {
+        "id": "s-6CN3uQKpXr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def selection_sort(lst):\n",
+        "    size = len(lst)\n",
+        "\n",
+        "    for i in range(size - 1):\n",
+        "        min_index = i  # Assume the first element is the smallest\n",
+        "\n",
+        "        for j in range(i + 1, size):  # Find the smallest element in the rest of the list\n",
+        "            if lst[j] < lst[min_index]:\n",
+        "                min_index = j  # Update the index of the smallest element\n",
+        "\n",
+        "        # Swap the found smallest element with the first element of the unsorted part\n",
+        "        lst[i], lst[min_index] = lst[min_index], lst[i]\n",
+        "\n",
+        "    return lst\n",
+        "\n",
+        "# Example usage\n",
+        "arr = [64, 34, 25, 12, 22, 11, 90]\n",
+        "sorted_arr = selection_sort(arr)\n",
+        "print(\"Sorted array:\", sorted_arr)\n"
+      ],
+      "metadata": {
+        "id": "7sHbqFSULVwb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10 March"
+      ],
+      "metadata": {
+        "id": "qDQjRspUOifk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "insertion_sort(list):\n",
+        "1. size = len(list)\n",
+        "2. for i=1 to size-1, do\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "I0AkntvYOk24"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "1.\n",
+        "def find_unique_linear(arr):\n",
+        "   for i in range(0, len(arr) - 1, 2):  # Step by 2 since elements appear in pairs\n",
+        "        if arr[i] != arr[i + 1]:\n",
+        "            return arr[i]\n",
+        "   return arr[-1]  # If no unique element was found, it's the last element\n",
+        "\n",
+        "def find_unique_binary(arr):\n",
+        "\n",
+        "    left, right = 0, len(arr) - 1\n",
+        "\n",
+        "    while left < right:\n",
+        "        mid = left + (right - left) // 2\n",
+        "\n",
+        "        # Ensure mid is even (so that pairs are aligned)\n",
+        "        if mid % 2 == 1:\n",
+        "            mid -= 1\n",
+        "\n",
+        "        if arr[mid] == arr[mid + 1]:\n",
+        "            left = mid + 2  # Move to the right half\n",
+        "        else:\n",
+        "            right = mid  # Move to the left half\n",
+        "\n",
+        "    return arr[left]  # The unique element is at index 'left'\n",
+        "\n",
+        "# Test Input\n",
+        "arr = [1, 1, 2, 2, 3, 3, 4, 5, 5]\n",
+        "\n",
+        "# Running both functions\n",
+        "print(\"Unique element using Linear Search:\", find_unique_linear(arr))\n",
+        "print(\"Unique element using Binary Search:\", find_unique_binary(arr))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PeDHLg77l4wV",
+        "outputId": "b2b1fdb9-8e73-4ed7-b4f7-b6be07af8893"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Unique element using Linear Search: 4\n",
+            "Unique element using Binary Search: 4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Linear Search and Binary Search."
+      ],
+      "metadata": {
+        "id": "PKO1stDlvAY7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "2.\n",
+        "def find_unique_linear(arr):\n",
+        "    for i in range(0, len(arr) - 1, 2):\n",
+        "        if arr[i] != arr[i + 1]:\n",
+        "            return arr[i]\n",
+        "    return arr[-1]\n",
+        "def find_unique_binary(arr):\n",
+        "    left, right = 0, len(arr) - 1\n",
+        "\n",
+        "    while left < right:\n",
+        "        mid = left + (right - left) // 2\n",
+        "\n",
+        "        if mid % 2 == 1:\n",
+        "            mid -= 1\n",
+        "\n",
+        "        if arr[mid] == arr[mid + 1]:\n",
+        "            left = mid + 2\n",
+        "        else:\n",
+        "            right = mid\n",
+        "\n",
+        "    return arr[left]\n",
+        "\n",
+        "\n",
+        "arr = [1, 1, 2, 2, 3, 3, 4, 5, 5]\n",
+        "print(\"Unique element using Linear Search:\", find_unique_linear(arr))\n",
+        "print(\"Unique element using Binary Search:\", find_unique_binary(arr))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "U0qiZqeemyYv",
+        "outputId": "43a147a3-3a94-44f1-8171-f22d04e01984"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Unique element using Linear Search: 4\n",
+            "Unique element using Binary Search: 4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11 March"
+      ],
+      "metadata": {
+        "id": "28osGg6B2Oyg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "rATeFMEi2SmI"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
